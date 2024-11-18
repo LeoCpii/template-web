@@ -20,8 +20,8 @@ export default function Tooltip({ children, direction = 'bottom' }: TooltipProps
     const id = useMemo(() => `tooltip-${uuid()}`, []);
 
     const className = joinClass([
-        'cj-tooltip',
-        animate && 'cj-tooltip--visible',
+        'ui-tooltip',
+        animate && 'ui-tooltip--visible',
     ]);
 
     const changePosition = (target: HTMLElement) => {

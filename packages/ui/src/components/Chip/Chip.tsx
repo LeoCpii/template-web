@@ -14,10 +14,10 @@ export interface ChipProps extends Omit<HTMLAttributes<HTMLElement>, 'children'>
 };
 function Chip({ label, color = 'default', variant = 'contained', ...props }: ChipProps) {
     const clss = joinClass([
-        'cj-chip',
-        `cj-chip--${color}`,
-        `cj-chip--${color}--${variant}`,
-        props.onClick && 'cj-chip--clickable',
+        'ui-chip',
+        `ui-chip--${color}`,
+        `ui-chip--${color}--${variant}`,
+        props.onClick && 'ui-chip--clickable',
         props.className
     ]);
 

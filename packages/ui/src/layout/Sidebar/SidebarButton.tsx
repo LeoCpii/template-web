@@ -18,13 +18,13 @@ export default function SidebarButton({ icon, ...props }: SidebarButtonProps) {
     const isActive = url === props.path;
 
     const className = joinClass([
-        'cj-sidebar__button',
-        isActive && 'cj-sidebar__button--active',
+        'ui-sidebar__button',
+        isActive && 'ui-sidebar__button--active',
     ]);
 
     const renderIcon = () => {
         return cloneElement<IconProps>(icon, {
-            className: joinClass([icon.props.className, 'cj-sidebar__button__icon'])
+            className: joinClass([icon.props.className, 'ui-sidebar__button__icon'])
         });
     };
 

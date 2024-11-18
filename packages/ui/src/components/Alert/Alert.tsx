@@ -18,8 +18,8 @@ export interface AlertProps extends HtmlHTMLAttributes<HTMLDivElement> {
 function Alert({ children, icon, color = 'primary', onClose, ...props }: AlertProps) {
 
     const className = joinClass([
-        'cj-alert',
-        `cj-alert--${color}`
+        'ui-alert',
+        `ui-alert--${color}`
     ]);
 
     const message = typeof children === 'string'
@@ -36,7 +36,7 @@ function Alert({ children, icon, color = 'primary', onClose, ...props }: AlertPr
         <div className={className} {...props}>
             {
                 icon && (
-                    <div className="cj-alert__icon">
+                    <div className="ui-alert__icon">
                         {renderIcon(icon)}
                     </div>
                 )
@@ -44,7 +44,7 @@ function Alert({ children, icon, color = 'primary', onClose, ...props }: AlertPr
             {message}
             {
                 !!onClose && (
-                    <ButtonIcon onClick={onClose} color={`${color}.dark`} className="cj-alert__button">
+                    <ButtonIcon onClick={onClose} color={`${color}.dark`} className="ui-alert__button">
                         <Icon name="times" />
                     </ButtonIcon>
                 )

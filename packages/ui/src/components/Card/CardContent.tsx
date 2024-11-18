@@ -8,7 +8,7 @@ import './Card.scss';
 type CardContentProps = HTMLAttributes<HTMLDivElement>;
 function CardContent({ children, ...props }: CardContentProps) {
 
-    const cls = joinClass(['cj-card__content', props.className]);
+    const cls = joinClass(['ui-card__content', props.className]);
 
     return (
         <div {...props} className={cls}>

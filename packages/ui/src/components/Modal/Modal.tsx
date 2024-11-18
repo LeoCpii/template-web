@@ -25,9 +25,9 @@ function Modal({ children, title, subtitle, isOpen, onClose, ...props }: ModalPr
 
     const ANIMATION_DURATION = 300;
 
-    const className = joinClass(['cj-modal', `cj-modal--${config.animation}`]);
-    const classNameContent = joinClass(['cj-modal__content', props.className]);
-    const backdropClassName = joinClass(['cj-modal__backdrop', `cj-modal__backdrop--${config.animation}`]);
+    const className = joinClass(['ui-modal', `ui-modal--${config.animation}`]);
+    const classNameContent = joinClass(['ui-modal__content', props.className]);
+    const backdropClassName = joinClass(['ui-modal__backdrop', `ui-modal__backdrop--${config.animation}`]);
 
     useEffect(() => {
         document.body.style.overflow = 'hidden';
@@ -59,13 +59,13 @@ function Modal({ children, title, subtitle, isOpen, onClose, ...props }: ModalPr
     return (
         config.visible && (
             <div className={backdropClassName} onClick={onClose}>
-                <div className="cj-modal__container">
+                <div className="ui-modal__container">
                     <Card className={className} onClick={(e) => e.stopPropagation()}>
                         <CardContent>
                             <Stack
                                 orientation="row"
-                                justify="space-between"
-                                align="flex-start"
+                                alignItems="flex-start"
+                                justifyContent="space-between"
                                 style={{ flexWrap: 'nowrap' }}
                             >
                                 <div>

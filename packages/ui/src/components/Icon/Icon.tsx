@@ -10,7 +10,7 @@ export interface IconProps extends HTMLAttributes<HTMLElement> { name: string; s
 function Icon({ name, size = 'medium', color = 'primary.main', ...props }: IconProps) {
     const { theme: { palette } } = useTheme();
 
-    const clss = joinClass(['cj-icon', 'uil', `uil-${name}`, size, props.className]);
+    const clss = joinClass(['ui-icon', 'uil', `uil-${name}`, size, props.className]);
 
     const c = convertPathToColor(color, palette);
 

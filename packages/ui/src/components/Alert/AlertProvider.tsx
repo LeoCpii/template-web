@@ -60,7 +60,7 @@ export default function AlertProvider({ children }: AlertProviderProps) {
 
     return (
         <AlertContext.Provider value={context}>
-            <div className="cj-alert-container">
+            <div className="ui-alert-container">
                 {
                     alerts.map(alert => {
                         return (

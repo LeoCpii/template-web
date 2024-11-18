@@ -8,7 +8,7 @@ import './Card.scss';
 type CardProps = PropsWithChildren<HTMLAttributes<HTMLDivElement>>;
 function Card({ children, ...props }: CardProps) {
 
-    const cls = joinClass(['cj-card', props.className]);
+    const cls = joinClass(['ui-card', props.className]);
 
     return (
         <div {...props} className={cls}>

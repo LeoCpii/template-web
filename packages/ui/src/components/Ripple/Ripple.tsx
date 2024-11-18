@@ -23,12 +23,12 @@ export default function Ripple() {
     }, [ripples]);
 
     return (
-        <div className="cj-ripple-container" ref={rippleContainerRef} onMouseUp={addRipple}>
+        <div className="ui-ripple-container" ref={rippleContainerRef} onMouseUp={addRipple}>
             {
                 ripples.map((ripple, index) => (
                     <span
                         key={index}
-                        className="cj-ripple"
+                        className="ui-ripple"
                         style={{
                             top: ripple.y,
                             left: ripple.x,

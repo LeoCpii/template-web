@@ -19,7 +19,7 @@ function Container({ children, lg = 950, md = 750, sm = '100%', ...props }: Cont
 
     const MAP = { sm, lg, md };
 
-    const className = joinClass(['cj-container', props.className]);
+    const className = joinClass(['ui-container', props.className]);
 
     useResize({
         onXs: () => setWidth(MAP['sm']),

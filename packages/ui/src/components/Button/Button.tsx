@@ -31,24 +31,24 @@ function Button({
     ...props
 }: ButtonProps) {
     const cls = joinClass([
-        'cj-button',
-        `cj-button--${size}`,
-        `cj-button--${color}`,
-        `cj-button--${color}--${variant}`,
-        noHover && 'cj-button--noHover',
-        fullWidth && 'cj-button--fullWidth',
+        'ui-button',
+        `ui-button--${size}`,
+        `ui-button--${color}`,
+        `ui-button--${color}--${variant}`,
+        noHover && 'ui-button--noHover',
+        fullWidth && 'ui-button--fullWidth',
         props.className
     ]);
 
     const renderIcon = (icon: React.JSX.Element, direction: 'left' | 'right') => {
         return cloneElement(icon, {
-            className: joinClass([icon.props.className, 'cj-button__icon', `cj-button__icon--${direction}`])
+            className: joinClass([icon.props.className, 'ui-button__icon', `ui-button__icon--${direction}`])
         });
     };
 
     const renderLoading = (loading: React.JSX.Element) => {
         return cloneElement<LoadingProps>(loading, {
-            className: joinClass([loading.props.className, 'cj-button__loading', `cj-button__loading--${size}`]),
+            className: joinClass([loading.props.className, 'ui-button__loading', `ui-button__loading--${size}`]),
             size: '1.1rem',
         });
     };

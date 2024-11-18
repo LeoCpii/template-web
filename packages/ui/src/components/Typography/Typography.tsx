@@ -51,11 +51,11 @@ export default function Typography({
     const CustomTag = MAP[variant];
 
     const cls = joinClass([
-        'cj-typography',
-        `cj-typography--${variant}`,
-        noMargin && 'cj-typography--no-margin',
-        weight && `cj-typography--weight-${weight}`,
-        gutterBottom && 'cj-typography--gutter-bottom',
+        'ui-typography',
+        `ui-typography--${variant}`,
+        noMargin && 'ui-typography--no-margin',
+        weight && `ui-typography--weight-${weight}`,
+        gutterBottom && 'ui-typography--gutter-bottom',
         props.className
     ]);
 

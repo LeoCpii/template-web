@@ -7,7 +7,7 @@ interface BoxProps extends HTMLAttributes<HTMLElement> {
     children: React.ReactNode;
 }
 function Box({ children, ...props }: BoxProps) {
-    const className = joinClass(['cj-box', props.className]);
+    const className = joinClass(['ui-box', props.className]);
 
     return (
         <div {...props} className={className}>

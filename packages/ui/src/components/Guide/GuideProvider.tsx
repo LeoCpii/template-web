@@ -110,7 +110,7 @@ export default function GuideProvider({ children }: GuideProviderProps) {
     return (
         <GuideContext.Provider value={context}>
             {children}
-            {start && <div className="cj-guide-overlay" onClick={finish} />}
+            {start && <div className="ui-guide-overlay" onClick={finish} />}
         </GuideContext.Provider >
     );
 }

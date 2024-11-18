@@ -16,7 +16,7 @@ function ButtonIcon({ children, color = 'primary.main', ...props }: ButtonIconPr
     const { theme: { palette } } = useTheme();
 
     const cls = joinClass([
-        'cj-button-icon',
+        'ui-button-icon',
         props.className
     ]);
 

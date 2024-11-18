@@ -30,33 +30,33 @@ function Input({
     ...props
 }: InputProps) {
     const containerClss = joinClass([
-        'cj-input-container',
-        fullWidth && 'cj-input-container--full-width',
-        gutterBottom && 'cj-input-container--gutter-bottom'
+        'ui-input-container',
+        fullWidth && 'ui-input-container--full-width',
+        gutterBottom && 'ui-input-container--gutter-bottom'
     ]);
 
     const labelClss = joinClass([
-        'cj-input-label',
-        error && 'cj-input-label--error',
+        'ui-input-label',
+        error && 'ui-input-label--error',
     ]);
 
     const clss = joinClass([
-        'cj-input',
-        error && 'cj-input--error',
+        'ui-input',
+        error && 'ui-input--error',
         props.className
     ]);
 
     const helperTextClss = joinClass([
-        'cj-input__helper-text',
-        helperText && 'cj-input__helper-text--visible',
-        error && 'cj-input__helper-text--error'
+        'ui-input__helper-text',
+        helperText && 'ui-input__helper-text--visible',
+        error && 'ui-input__helper-text--error'
     ]);
 
     const renderIcon = (icon: ReactElement<ButtonIconProps>, direction: 'left' | 'right') => {
         return cloneElement(icon, {
             type: 'button',
             color: 'text.secondary',
-            className: joinClass([icon.props.className, 'cj-input__icon', `cj-input__icon--${direction}`]),
+            className: joinClass([icon.props.className, 'ui-input__icon', `ui-input__icon--${direction}`]),
             onClick: (e: MouseEvent<any, globalThis.MouseEvent>) => {
                 e.stopPropagation();
                 if (icon.props.onClick) { icon.props.onClick(e); };

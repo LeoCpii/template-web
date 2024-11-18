@@ -6,7 +6,7 @@ interface SidebarButtonProps {
 }
 export default function Sidebar({ upButtons, downButtons }: SidebarButtonProps) {
     return (
-        <ul className="cj-sidebar">
+        <ul className="ui-sidebar">
             <div>
                 {upButtons}
             </div>

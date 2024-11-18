@@ -48,32 +48,32 @@ function Select({
     const [open, el, ref, toggle] = useMenu();
 
     const containerClss = joinClass([
-        'cj-input-container',
-        fullWidth && 'cj-input-container--full-width',
-        gutterBottom && 'cj-input-container--gutter-bottom'
+        'ui-input-container',
+        fullWidth && 'ui-input-container--full-width',
+        gutterBottom && 'ui-input-container--gutter-bottom'
     ]);
 
     const labelClss = joinClass([
-        'cj-input-label',
-        error && 'cj-input-label--error',
+        'ui-input-label',
+        error && 'ui-input-label--error',
     ]);
 
     const clss = joinClass([
-        'cj-input',
-        'cj-select',
-        error && 'cj-input--error',
+        'ui-input',
+        'ui-select',
+        error && 'ui-input--error',
         props.className
     ]);
 
     const helperTextClss = joinClass([
-        'cj-input__helper-text',
-        helperText && 'cj-input__helper-text--visible',
-        error && 'cj-input__helper-text--error'
+        'ui-input__helper-text',
+        helperText && 'ui-input__helper-text--visible',
+        error && 'ui-input__helper-text--error'
     ]);
 
     const renderIcon = (icon: ReactElement<ButtonHTMLAttributes<any>>) => {
         return cloneElement(icon, {
-            className: joinClass([icon.props.className, 'cj-input__icon', 'cj-input__icon--right']),
+            className: joinClass([icon.props.className, 'ui-input__icon', 'ui-input__icon--right']),
             type: 'button',
             onClick: (e: MouseEvent<any, globalThis.MouseEvent>) => {
                 e.stopPropagation();
@@ -104,7 +104,7 @@ function Select({
                     <Icon
                         name="angle-down"
                         color="text.secondary"
-                        className="cj-input__icon cj-input__icon--left"
+                        className="ui-input__icon ui-input__icon--left"
                     />
                 </div>
             </button>

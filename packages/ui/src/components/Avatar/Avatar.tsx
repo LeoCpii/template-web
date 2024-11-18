@@ -16,11 +16,11 @@ interface AvatarProps extends HTMLAttributes<HTMLElement> {
 }
 function Avatar({ src, alt, name, ...props }: AvatarProps) {
     const className = joinClass([
-        'cj-avatar',
-        src && 'cj-avatar--image',
-        name && 'cj-avatar--name',
-        !src && !name && 'cj-avatar--icon',
-        props.onClick && 'cj-avatar--clickable',
+        'ui-avatar',
+        src && 'ui-avatar--image',
+        name && 'ui-avatar--name',
+        !src && !name && 'ui-avatar--icon',
+        props.onClick && 'ui-avatar--clickable',
         props.className
     ]);
 
@@ -29,7 +29,7 @@ function Avatar({ src, alt, name, ...props }: AvatarProps) {
         if (name) { return <span>{getInitials(name)}</span>; }
 
         return (
-            <Icon name="user" className="cj-avatar__icon" />
+            <Icon name="user" className="ui-avatar__icon" />
         );
     };
 

@@ -115,7 +115,7 @@ export default forwardRef<HTMLDivElement, MenuListProps>(function Menu({
                 transition: `all ${ANIMATION_DURATION}ms ease-in`,
                 zIndex: 50,
             }}
-            className={joinClass(['cj-menu', config?.animation])}
+            className={joinClass(['ui-menu', config?.animation])}
             {...props}
         >
             <Card>

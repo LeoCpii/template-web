@@ -33,8 +33,8 @@ function Bullet({ visible, name }: BulletProps) {
     const { goTo } = useContext(GuideContext);
 
     const className = joinClass([
-        'cj-guide__bullet',
-        visible ? 'cj-guide__bullet--active' : ''
+        'ui-guide__bullet',
+        visible ? 'ui-guide__bullet--active' : ''
     ]);
 
     return (
@@ -52,14 +52,14 @@ function Frame({ next, previous, step, index, length }: FrameProps) {
     useEffect(() => { setTimeout(() => { setActive(true); }, 0); }, []);
 
     const className = joinClass([
-        'cj-guide__frame',
-        `cj-guide__frame--${horizontal}-${vertical}`,
-        active ? 'cj-guide__frame--active' : '',
+        'ui-guide__frame',
+        `ui-guide__frame--${horizontal}-${vertical}`,
+        active ? 'ui-guide__frame--active' : '',
     ]);
 
     const classNameContent = joinClass([
-        'cj-guide__frame__content',
-        active ? 'cj-guide__frame__content--active' : '',
+        'ui-guide__frame__content',
+        active ? 'ui-guide__frame__content--active' : '',
     ]);
 
     return (
@@ -69,7 +69,7 @@ function Frame({ next, previous, step, index, length }: FrameProps) {
             <Card className={classNameContent}>
                 <CardContent>
                     <Stack spacing="small">
-                        <Stack justify="flex-end" orientation="row">
+                        <Stack justifyContent="flex-end" orientation="row">
                             <ButtonIcon onClick={finish}>
                                 <Icon name="times" color="text.primary" />
                             </ButtonIcon>
@@ -80,7 +80,12 @@ function Frame({ next, previous, step, index, length }: FrameProps) {
                             {step.content}
                         </div>
 
-                        <Stack justify="center" align="center" orientation="row" style={{ padding: '8px 0px' }}>
+                        <Stack
+                            orientation="row"
+                            alignItems="center"
+                            justifyContent="center"
+                            style={{ padding: '8px 0px' }}
+                        >
                             {
                                 steps.map((step) => (
                                     <Bullet
@@ -92,7 +97,7 @@ function Frame({ next, previous, step, index, length }: FrameProps) {
                             }
                         </Stack>
 
-                        <Stack orientation="row" justify="flex-end" align="center" spacing="small">
+                        <Stack orientation="row" justifyContent="flex-end" alignItems="center" spacing="small">
                             {
                                 index !== 0 && <Button onClick={previous} variant="text">Voltar</Button>
                             }
@@ -120,8 +125,8 @@ export default function Step({ children, name }: StepProps) {
     const arrayChildren = Children.toArray(children) as ChildrenElem;
 
     const className = joinClass([
-        'cj-guide__step',
-        isActive ? 'cj-guide__step--active' : ''
+        'ui-guide__step',
+        isActive ? 'ui-guide__step--active' : ''
     ]);
 
     useEffect(() => { validateChildren(name, arrayChildren); }, []);

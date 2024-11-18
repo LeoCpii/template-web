@@ -10,7 +10,7 @@ export interface OptionProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 export default function Option({ children, ...props }: OptionProps) {
 
-    const className = joinClass(['cj-option', props.className]);
+    const className = joinClass(['ui-option', props.className]);
 
     return (
         <button type="button" {...props} className={className}>
