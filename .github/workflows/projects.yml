@@ -1,0 +1,89 @@
+name: Build Project
+
+on:
+  workflow_call:
+    inputs:
+      ENVIRONMENT:
+        required: true
+        type: string
+      PROJECT:
+        required: true
+        type: string
+      COMMAND:
+        required: true
+        type: string
+      BUILD_ENV:
+        required: true
+        type: string
+      PATH:
+        required: true
+        type: string
+jobs:
+  environment:
+    runs-on: ubuntu-latest
+    outputs:
+      tag_name: ${{ steps.tag_name.outputs.value }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Get TAG name
+        id: tag_name
+        run: 
+          echo "value=${GITHUB_REF#refs/tags/}" >> $GITHUB_OUTPUT
+
+  build:
+    needs: [environment]
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.ENVIRONMENT }}
+    env:
+      # Environment
+      VITE_ENV: ${{ inputs.BUILD_ENV }}
+      VITE_RELEASE: ${{ needs.environment.outputs.tag_name }}
+      # Firebase
+      VITE_ID: ${{ secrets.FIREBASE_ID }}
+      VITE_API_KEY: ${{ secrets.FIREBASE_API_KEY }}
+      VITE_PROJECT_ID: ${{ secrets.FIREBASE_PROJECT_ID }}
+      VITE_AUTH_DOMAIN: ${{ secrets.FIREBASE_AUTH_DOMAIN }}
+      VITE_STORAGE_BUCKET: ${{ secrets.FIREBASE_STORAGE_BUCKET }}
+      VITE_MEASUREMENT_ID: ${{ secrets.FIREBASE_MEASUREMENT_ID }}
+      VITE_MESSAGING_SENDER_ID: ${{ secrets.FIREBASE_MESSAGING_SENDER_ID }}
+      # Variables
+      VITE_SSO_URL: ${{ vars.SSO_URL }}
+      VITE_MANAGER_URL: ${{ vars.MANAGER_URL }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install NodeJS
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+          cache: "yarn"
+
+      - name: Cache node_modules
+        uses: actions/cache@v4
+        with:
+          path: "**/node_modules"
+          key: ${{ runner.os }}-setup-${{ inputs.BUILD_ENV }}-${{ hashFiles('./yarn.lock') }}
+
+      - name: Cache Dependencies
+        uses: actions/cache@v4
+        with:
+          path: "**/packages/*/dist"
+          key: ${{ runner.os }}-dependencies-${{ inputs.BUILD_ENV }}-${{ github.sha }}
+
+      - name: Cache ${{ inputs.PROJECT }}
+        id: cache-project
+        uses: actions/cache@v4
+        with:
+          path: |
+            ${{ github.workspace }}/packages/app/${{ inputs.PROJECT }}/${{ inputs.PATH }}
+          key: ${{ runner.os }}-project-${{ inputs.PROJECT }}-${{ inputs.BUILD_ENV }}-${{ github.sha }}
+          restore-keys: ${{ runner.os }}-project-${{ inputs.PROJECT }}-${{ inputs.BUILD_ENV }}-${{ github.sha }}
+  
+      - name: Build ${{ inputs.PROJECT }}
+        if: steps.cache-project.outputs.cache-hit != 'true'
+        run: |
+          make run ${{ inputs.PROJECT }} ${{ inputs.COMMAND }}

@@ -1,0 +1,71 @@
+name: CI
+
+on:
+  pull_request:
+    branches:
+      - master
+
+  workflow_dispatch:
+
+jobs:
+  setup:
+    uses: ./.github/workflows/setup.yml
+    with:
+      BUILD_ENV: local
+    secrets: inherit
+  
+  lint:
+    needs: [setup]
+    uses: ./.github/workflows/lint.yml
+    with:
+      BUILD_ENV: local
+    secrets: inherit
+
+  build-dependencies:
+    needs: [setup]
+    uses: ./.github/workflows/dependencies.yml
+    with:
+      BUILD_ENV: local
+    secrets: inherit
+
+  unit-tests:
+    needs: [build-dependencies]
+    uses: ./.github/workflows/unit-tests.yml
+    with:
+      BUILD_ENV: local
+    secrets: inherit
+
+  build-sso:
+    needs: [unit-tests]
+    uses: ./.github/workflows/projects.yml
+    with:
+      ENVIRONMENT: SSO
+      BUILD_ENV: local
+      PATH: dist
+      PROJECT: sso
+      COMMAND: build
+    secrets: inherit
+
+  build-manager:
+    needs: [unit-tests]
+    uses: ./.github/workflows/projects.yml
+    with:
+      ENVIRONMENT: MANAGER
+      BUILD_ENV: local
+      PATH: dist
+      PROJECT: manager
+      COMMAND: build
+    secrets: inherit
+
+  e2e-account:
+    needs: [build-manager]
+    uses: ./.github/workflows/e2e-tests.yml
+    with:
+      PORT: 5001
+      PATH: dist
+      BUILD_ENV: local
+      PROJECT: manager
+      RUN_TEST_COMMAND: test:manager
+      START_PROJECT_COMMAND: preview
+    secrets: inherit
+  

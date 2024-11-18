@@ -1,0 +1,39 @@
+name: Build Dependencies
+
+on:
+  workflow_call:
+    inputs:
+      BUILD_ENV:
+        required: true
+        type: string
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install NodeJS
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'yarn'
+
+      - name: Cache node_modules
+        uses: actions/cache@v4
+        with:
+          path: "**/node_modules"
+          key: ${{ runner.os }}-setup-${{ inputs.BUILD_ENV }}-${{ hashFiles('./yarn.lock') }}
+
+      - name: Cache Dependencies
+        id: cache-dependencies
+        uses: actions/cache@v4
+        with:
+          path: "**/packages/*/dist"
+          key: ${{ runner.os }}-dependencies-${{ inputs.BUILD_ENV }}-${{ github.sha }}
+
+      - name: Build dependencies
+        if: steps.cache-dependencies.outputs.cache-hit != 'true'
+        run: |
+          make build-dependencies;

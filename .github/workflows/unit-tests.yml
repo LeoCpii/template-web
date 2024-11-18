@@ -1,0 +1,61 @@
+name: Unit Tests
+
+on:
+  workflow_call:
+    inputs:
+      BUILD_ENV:
+        required: true
+        type: string
+
+jobs:
+  test-toolkit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install NodeJS
+        uses: actions/setup-node@v4
+        with:
+          node-version: "18"
+
+      - name: Cache node_modules
+        uses: actions/cache@v4
+        with:
+          path: "**/node_modules"
+          key: ${{ runner.os }}-setup-${{ inputs.BUILD_ENV }}-${{ hashFiles('./yarn.lock') }}
+
+      - name: Cache Dependencies
+        uses: actions/cache@v4
+        with:
+          path: "**/packages/*/dist"
+          key: ${{ runner.os }}-dependencies-${{ inputs.BUILD_ENV }}-${{ github.sha }}
+
+      - name: Run tests
+        run: make toolkit-test
+
+  test-services:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install NodeJS
+        uses: actions/setup-node@v4
+        with:
+          node-version: "18"
+
+      - name: Cache node_modules
+        uses: actions/cache@v4
+        with:
+          path: "**/node_modules"
+          key: ${{ runner.os }}-setup-${{ inputs.BUILD_ENV }}-${{ hashFiles('./yarn.lock') }}
+
+      - name: Cache Dependencies
+        uses: actions/cache@v4
+        with:
+          path: "**/packages/*/dist"
+          key: ${{ runner.os }}-dependencies-${{ inputs.BUILD_ENV }}-${{ github.sha }}
+
+      - name: Run tests
+        run: make services-test
