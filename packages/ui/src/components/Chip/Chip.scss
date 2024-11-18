@@ -1,0 +1,58 @@
+@use "src/styles/main.scss" as *;
+
+.cj-chip {
+    font-size: 0.8125rem;
+    height: 32px;
+    border-radius: calc(var(--radius) * 4);
+    white-space: nowrap;
+    padding: 0px;
+    border-width: 1px;
+    border-style: solid;
+    border-image: initial;
+    transition: all $animation;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    &--clickable {
+        cursor: pointer;
+    }
+
+    span {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        padding-left: 12px;
+        padding-right: 12px;
+        white-space: nowrap;
+    }
+
+    @each $color in $colors {
+        &--#{$color} {
+            border: 1px solid var(--#{$color});
+
+            &--outlined {
+                color: var(--#{$color});
+            }
+
+            &--contained {
+                background-color: var(--#{$color});
+                color: var(--#{$color}-contrast);
+            }
+        }
+    }
+
+    &--default {
+        border: 1px solid var(--divider);
+        color: var(--text-primary);
+
+        &--outlined {
+            color: var(--text-primary);
+        }
+
+        &--contained {
+            background-color: var(--divider);
+            color: var(--text-primary);
+        }
+    }
+}

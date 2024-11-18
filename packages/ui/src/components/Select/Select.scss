@@ -1,0 +1,35 @@
+@use "src/styles/main.scss" as *;
+
+.cj-select {
+    width: 100%;
+    cursor: pointer;
+    font-size: 14px;
+
+    input {
+        cursor: pointer;
+
+        &:read-only {
+            background-color: var(--background-default);
+            color: var(--text-primary);
+        }
+    }
+}
+
+.cj-option {
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    border: none;
+    width: 100%;
+    border-radius: var(--radius);
+    background-color: var(--background-default);
+    transition: all $animation;
+    color: var(--text-primary);
+
+    &:hover {
+        background-color: var(--background-paper);
+    }
+
+    &.selected {
+        background-color: var(--text-disabled);
+    }
+}

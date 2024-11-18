@@ -1,0 +1,14 @@
+@use "src/styles/main.scss" as *;
+
+.cj-button-icon {
+    position: relative;
+    border-radius: 50%;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    transition: all $animation;
+
+    &:hover {
+        background-color: var(--divider);
+    }
+}
