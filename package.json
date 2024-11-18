@@ -1,0 +1,33 @@
+{
+  "name": "template-web",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "leonardo.goncalves <leogoncalves.contato@gmail.com>",
+  "private": true,
+  "license": "MIT",
+  "workspaces": {
+    "packages": [
+      "packages/*",
+      "packages/ui",
+      "packages/app/*",
+      "packages/services"
+    ]
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.13.0",
+    "@template-web/services": "*",
+    "@template-web/toolkit": "*",
+    "@template-web/ui": "*",
+    "eslint": "^9.13.0",
+    "eslint-plugin-import-helpers": "^2.0.1",
+    "eslint-plugin-react": "^7.37.2",
+    "globals": "^15.11.0",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "typescript-eslint": "^8.12.0"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "test": "yarn workspaces foreach -ptv run test"
+  }
+}
