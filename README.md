@@ -21,19 +21,12 @@
 
 ## Descrição
 
-Este repositório contém a solução para o desafio de Frontend da template-web
 
-## Desafio proposto
-
-Continuar o desenvolvimento de uma aplicação de admissão
-
-Referência: [template-web Front End](https://github.com/template-web-beneficios/template-web-front-teste-1)
 
 ## Urls
 Env | URL
 --- | ---
-SSO | https://sso-desafio-template-web.web.app/
-Manager | https://manager-desafio-template-web.web.app/
+SSO | ##SSO_URL
 
 ## Arquitetura
 
@@ -41,7 +34,7 @@ Manager | https://manager-desafio-template-web.web.app/
 
 ## Solução desenvolvida
 
-O projeto é composto por duas aplicações principais: a primeira, chamada [SSO](https://github.com/LeoCpii/template-web-ciclos/tree/master/packages/app/sso), é responsável por autenticar e registrar os usuários na base de dados. A segunda aplicação, [Manager](https://github.com/LeoCpii/template-web-ciclos/tree/master/packages/app/manager), gerencia os processos de admissão e candidaturas de usuários. Além dessas, foram desenvolvidos cinco módulos adicionais - `@template-web/ui`, `@template-web/toolkit`, `@template-web/services`, `@template-web/e2e` e `DB` - para ampliar as funcionalidades e suportar as operações do sistema.
+O projeto é composto por duas aplicações principais: a primeira, chamada [SSO](https://github.com/LeoCpii/template-web-ciclos/tree/master/packages/app/sso), é responsável por autenticar e registrar os usuários na base de dados. ##DESCREVER_MAIS_APLICACOES_AQUI##. Além dessas, foram desenvolvidos cinco módulos adicionais - `@template-web/ui`, `@template-web/toolkit`, `@template-web/services`, `@template-web/e2e` e `DB` - para ampliar as funcionalidades e suportar as operações do sistema.
 
 ### [@template-web/ui](https://github.com/LeoCpii/template-web-ciclos/tree/master/packages/ui)
 
@@ -120,13 +113,8 @@ make run manager dev
 Env | URL
 --- | ---
 SSO | http://localhost:5000
-Manager | http://localhost:5001
 
-8. Para se autenticar localmente utilize as credenciais `desafio@template-web.com.br` e `Testando123` ou adicione um novo usuário no processo de criação de conta.
-
-![image](https://github.com/user-attachments/assets/cd64cc86-667a-4f31-b99a-5ebab4c68e57)
-
-![image](https://github.com/user-attachments/assets/a3c62339-8758-4a63-9e22-347de1372f5c)
+8. Para se autenticar localmente utilize as credenciais `michael.scott@theoffice.com` e `Testando4` ou adicione um novo usuário no processo de criação de conta.
 
 ## Comandos adicionais
 
