@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    "target": "es5",
+    "lib": [
+      "es5",
+      "dom"
+    ],
+    "types": [
+      "cypress",
+      "node",
+      "cypress-xpath",
+      "@4tw/cypress-drag-drop"
+    ],
+    "paths": {
+      "@test/*": [
+        "test/*"
+      ],
+      "@support/*": [
+        "support/*"
+      ]
+    },
+  },
+  "include": [
+    "**/*.ts"
+  ]
+}
