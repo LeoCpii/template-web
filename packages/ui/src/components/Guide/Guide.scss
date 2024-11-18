@@ -1,6 +1,6 @@
 @use "src/styles/main.scss" as *;
 
-.cj-guide-overlay {
+.ui-guide-overlay {
     top: 0;
     left: 0;
     z-index: 3;
@@ -11,7 +11,7 @@
     background-color: rgba(0, 0, 0, 0.64);
 }
 
-.cj-guide__frame {
+.ui-guide__frame {
     right: 0;
     width: max-content;
     max-width: 550px;
@@ -88,7 +88,7 @@
     }
 }
 
-.cj-guide__step {
+.ui-guide__step {
     border-radius: var(--radius);
     position: relative;
     transition: all $animation;
@@ -98,7 +98,7 @@
     }
 }
 
-.cj-guide__bullet {
+.ui-guide__bullet {
     width: 6px;
     height: 6px;
     cursor: pointer;

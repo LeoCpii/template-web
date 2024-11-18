@@ -1,6 +1,6 @@
 @use "src/styles/main.scss" as *;
 
-.cj-modal__backdrop {
+.ui-modal__backdrop {
     position: fixed;
     z-index: 1300;
     inset: 0px;
@@ -13,7 +13,7 @@
     }
 }
 
-.cj-modal__container {
+.ui-modal__container {
     height: 100%;
     outline: 0px;
     display: flex;
@@ -22,7 +22,7 @@
     padding: 0px 16px;
 }
 
-.cj-modal {
+.ui-modal {
     width: 600px;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     transition: all $animation;

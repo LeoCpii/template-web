@@ -1,6 +1,6 @@
 @use "src/styles/main.scss" as *;
 
-.cj-select {
+.ui-select {
     width: 100%;
     cursor: pointer;
     font-size: 14px;
@@ -15,7 +15,7 @@
     }
 }
 
-.cj-option {
+.ui-option {
     cursor: pointer;
     padding: 0.5rem 1rem;
     border: none;

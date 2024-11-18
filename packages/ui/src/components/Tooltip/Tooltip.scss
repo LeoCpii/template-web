@@ -1,6 +1,6 @@
 @use "src/styles/main.scss" as *;
 
-.cj-tooltip {
+.ui-tooltip {
     position: absolute;
     transition: all $animation;
     width: fit-content;

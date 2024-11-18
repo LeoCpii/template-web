@@ -1,6 +1,6 @@
 @use "src/styles/main.scss" as *;
 
-.cj-button {
+.ui-button {
     position: relative;
     border: none;
     font-size: 0.875rem;
@@ -48,12 +48,12 @@
                 color: var(--text-disabled);
                 cursor: not-allowed;
 
-                .cj-button__icon {
+                .ui-button__icon {
                     color: var(--text-disabled) !important;
                 }
             }
 
-            .cj-button__icon {
+            .ui-button__icon {
                 color: var(--#{$color}-contrast) !important;
                 font-size: 16px !important;
 
@@ -66,7 +66,7 @@
                 }
             }
 
-            .cj-button__loading {
+            .ui-button__loading {
                 color: var(--#{$color}-contrast) !important;
 
                 &--small {
@@ -93,11 +93,11 @@
                     color: var(--#{$color}-contrast);
                 }
 
-                &:hover .cj-button__icon {
+                &:hover .ui-button__icon {
                     color: var(--#{$color}-contrast) !important;
                 }
 
-                .cj-button__icon {
+                .ui-button__icon {
                     color: var(--#{$color}) !important;
                     font-size: 16px !important;
 
@@ -119,7 +119,7 @@
                     background-color: var(--divider);
                 }
 
-                .cj-button__icon {
+                .ui-button__icon {
                     color: var(--#{$color}) !important;
                     font-size: 16px !important;
 

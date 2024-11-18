@@ -15,12 +15,12 @@ function Loading({ color = 'primary.main', size = '1.5rem', ...props }: LoadingP
 
     const c = convertPathToColor(color, palette);
 
-    const className = joinClass(['cj-loading', props.className]);
+    const className = joinClass(['ui-loading', props.className]);
 
     return (
         <span {...props} className={className} style={{ ...props, color: c, width: size, height: size }}>
-            <svg className="cj-loading__svg" viewBox="22 22 44 44">
-                <circle className="cj-loading__circle" cx="44" cy="44" r="20.2" fill="none" strokeWidth="3.6">
+            <svg className="ui-loading__svg" viewBox="22 22 44 44">
+                <circle className="ui-loading__circle" cx="44" cy="44" r="20.2" fill="none" strokeWidth="3.6">
                 </circle>
             </svg>
         </span>

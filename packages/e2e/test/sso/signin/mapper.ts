@@ -19,7 +19,7 @@ export default {
 
     },
     alert() {
-        return cy.get('.cj-alert')
+        return cy.get('.ui-alert')
             .first();
     }
 };

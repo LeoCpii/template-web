@@ -1,6 +1,6 @@
 @use "src/styles/main.scss" as *;
 
-.cj-menu {
+.ui-menu {
     position: absolute;
     word-break: break-all;
     white-space: pre-wrap;
@@ -18,7 +18,7 @@
         opacity: 0;
     }
 
-    .cj-menu__item {
+    .ui-menu__item {
         border: none;
         padding: 8px 16px;
         border-radius: var(--radius);

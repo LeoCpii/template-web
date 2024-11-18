@@ -1,6 +1,6 @@
 @use "src/styles/main.scss" as *;
 
-.cj-input-container {
+.ui-input-container {
     width: fit-content;
 
     &--full-width {
@@ -12,7 +12,7 @@
     }
 }
 
-.cj-input-label {
+.ui-input-label {
     font-size: $font-small;
     color: var(--text-secondary);
     display: block;
@@ -23,7 +23,7 @@
     }
 }
 
-.cj-input {
+.ui-input {
     cursor: text;
     border-radius: var(--radius);
     border: 1px solid var(--divider);
