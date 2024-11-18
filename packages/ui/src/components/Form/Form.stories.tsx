@@ -156,7 +156,7 @@ export const Template: StoryObj<typeof Form> = {
                                 }
                             />}
                         />
-                        <Stack orientation="row" justify="flex-end">
+                        <Stack orientation="row" justifyContent="flex-end">
                             <Button type="submit">Submit</Button>
                         </Stack>
                     </CardContent>

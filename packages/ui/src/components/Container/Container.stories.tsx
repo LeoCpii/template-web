@@ -14,7 +14,7 @@ const meta: Meta<typeof Container> = {
 export const Fluid: StoryObj<typeof Container> = {
     render: () => {
         return (
-            <Stack justify="center">
+            <Stack justifyContent="center">
                 <Container>
                     <Box sx={{
                         p: 2,

@@ -12,7 +12,7 @@ const meta: Meta<typeof Loading> = {
 export const Colors: StoryObj<typeof Loading> = {
     render: () => {
         return (
-            <Stack orientation="row" align="baseline">
+            <Stack orientation="row" alignItems="baseline">
                 <Loading color="primary.main" />
                 <Loading color="secondary.main" />
                 <Loading color="error.main" />
@@ -26,7 +26,7 @@ export const Colors: StoryObj<typeof Loading> = {
 export const Sizes: StoryObj<typeof Loading> = {
     render: () => {
         return (
-            <Stack orientation="row" align="baseline">
+            <Stack orientation="row" alignItems="baseline">
                 <Loading size="1rem" />
                 <Loading size="2rem" />
                 <Loading size="3rem" />
