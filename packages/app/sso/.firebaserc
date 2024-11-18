@@ -1,0 +1,15 @@
+{
+  "projects": {
+    "production": "template-web"
+  },
+  "targets": {
+    "template-web": {
+      "hosting": {
+        "sso": [
+          "sso-template-web"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}
