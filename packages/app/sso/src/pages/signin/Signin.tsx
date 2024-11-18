@@ -19,7 +19,7 @@ import Form, { Control, useForm, FormControl } from '@template-web/ui/components
 
 import logger from '@template-web/toolkit/logger';
 
-import { authServices, release, url } from '@/services/core';
+import { authServices, release } from '@/services/core';
 
 const FIREBASE = {
     'auth/user-not-found': 'Email ou senha inválidos',
@@ -68,12 +68,6 @@ function EmailAndPasswordForm() {
             }
         }
     }, []);
-
-    const redirect = () => {
-        const managerUrl = `${url.manager}?token=${authServices.access_token}&email=${formGroup.controls.email.value}`;
-        logger.info('Redirecting to manager page:', managerUrl);
-        window.open(managerUrl, '_self');
-    };
 
     const toggleType = () => { setType(prev => prev === 'text' ? 'password' : 'text'); };
 
