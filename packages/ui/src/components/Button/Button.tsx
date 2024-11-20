@@ -8,7 +8,7 @@ import type { LoadingProps } from '@/components/Loading';
 
 import './Button.scss';
 
-interface ButtonProps extends PropsWithChildren<ButtonHTMLAttributes<HTMLButtonElement>> {
+export interface ButtonProps extends PropsWithChildren<ButtonHTMLAttributes<HTMLButtonElement>> {
     size?: Size;
     color?: Colors;
     fullWidth?: boolean;
