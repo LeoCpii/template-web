@@ -10,8 +10,8 @@ import './Tooltip.scss';
 type TooltipCoordinate = { top?: number; left?: number; };
 type Direction = 'top' | 'right' | 'bottom' | 'left';
 
-interface TooltipProps { children: React.JSX.Element; direction?: Direction; }
-export default function Tooltip({ children, direction = 'bottom' }: TooltipProps) {
+interface TooltipProps { children: React.JSX.Element; direction?: Direction; label: string; }
+export default function Tooltip({ children, label, direction = 'bottom' }: TooltipProps) {
     const { theme: { spacing } } = useTheme();
     const [open, setOpen] = useState(false);
     const [animate, setAnimate] = useState(false);
@@ -90,7 +90,7 @@ export default function Tooltip({ children, direction = 'bottom' }: TooltipProps
                 ...coordinate,
                 display: open ? 'block' : 'none',
             }}>
-                texto
+                {label}
             </span>
         </>
     );
