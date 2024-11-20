@@ -1,5 +1,4 @@
-$header-height: 54px;
-$sidebar-width: 56px;
+@use '../Layout.scss' as *;
 
 .ui-sidebar {
     max-width: 56px;
