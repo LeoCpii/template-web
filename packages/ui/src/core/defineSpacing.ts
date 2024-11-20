@@ -27,16 +27,20 @@ function definePadding(options: CustomOptions): CSSProperties {
 
     const { p, pb, pl, pr, pt, px, py } = options;
 
-    const hasP = p ? p * spacing : undefined;
+    const calculatePadding = (pd?: number) => {
+        return !!pd || pd === 0 ? pd * spacing : undefined;
+    };
 
-    const hasPt = pt ? pt * spacing : undefined;
-    const hasPb = pb ? pb * spacing : undefined;
+    const hasP = calculatePadding(p);
 
-    const hasPy = py ? py * spacing : undefined;
-    const hasPx = px ? px * spacing : undefined;
+    const hasPt = calculatePadding(pt);
+    const hasPb = calculatePadding(pb);
 
-    const hasPl = pl ? pl * spacing : undefined;
-    const hasPr = pr ? pr * spacing : undefined;
+    const hasPy = calculatePadding(py);
+    const hasPx = calculatePadding(px);
+
+    const hasPl = calculatePadding(pl);
+    const hasPr = calculatePadding(pr);
 
     return {
         padding: hasP,
@@ -52,16 +56,20 @@ function defineMargin(options: CustomOptions): CSSProperties {
 
     const { m, mb, ml, mr, mt, mx, my } = options;
 
-    const hasM = m ? m * spacing : undefined;
+    const calculateMargin = (mg?: number) => {
+        return !!mg || mg === 0 ? mg * spacing : undefined;
+    };
 
-    const hasMt = mt ? mt * spacing : undefined;
-    const hasMb = mb ? mb * spacing : undefined;
+    const hasM = calculateMargin(m);
 
-    const hasMy = my ? my * spacing : undefined;
-    const hasMx = mx ? mx * spacing : undefined;
+    const hasMt = calculateMargin(mt);
+    const hasMb = calculateMargin(mb);
 
-    const hasMl = ml ? ml * spacing : undefined;
-    const hasMr = mr ? mr * spacing : undefined;
+    const hasMy = calculateMargin(my);
+    const hasMx = calculateMargin(mx);
+
+    const hasMl = calculateMargin(ml);
+    const hasMr = calculateMargin(mr);
 
     return {
         margin: hasM,
