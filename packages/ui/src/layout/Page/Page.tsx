@@ -42,9 +42,9 @@ export default function BasePage({ title, subtitle, action, loading, backAction,
                 <div>
                     {backAction}
                     <Stack
+                        sx={{ mb: 4 }}
                         alignItems={align}
                         orientation={orientation}
-                        style={{ marginBottom: 32 }}
                         justifyContent="space-between"
                     >
                         <Stack orientation="row" alignItems="center" style={{ width: 'auto' }}>
