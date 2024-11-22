@@ -4,10 +4,10 @@
   "type": "module",
   "scripts": {
     "test": "cypress run",
-    "sso:open": "cypress open --config baseUrl=http://localhost:5000",
-    "sso": "cypress run --config baseUrl=http://localhost:5000 --spec 'test/sso/**/*'",
-    "manager:open": "cypress open --config baseUrl=http://localhost:5001",
-    "manager": "cypress run --config baseUrl=http://localhost:5001 --spec 'test/manager/**/*'"
+    "sso:open": "cypress open --config baseUrl=http://localhost:4200",
+    "sso": "cypress run --config baseUrl=http://localhost:4200 --spec 'test/sso/**/*'",
+    "manager:open": "cypress open --config baseUrl=http://localhost:4201",
+    "manager": "cypress run --config baseUrl=http://localhost:4201 --spec 'test/manager/**/*'"
   },
   "dependencies": {
     "cypress": "^13.16.0",
