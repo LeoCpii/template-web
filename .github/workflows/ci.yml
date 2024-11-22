@@ -66,6 +66,6 @@ jobs:
       BUILD_ENV: local
       PROJECT: sso
       RUN_TEST_COMMAND: sso
-      START_PROJECT_COMMAND: preview
+      START_PROJECT_COMMAND: dev
     secrets: inherit
   
