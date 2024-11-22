@@ -16,6 +16,7 @@ export const Default: StoryObj<typeof Page> = {
             <Page
                 title="Title"
                 subtitle="Subtitle"
+                release="1.0.0"
                 action={
                     <Button
                         size="small"
@@ -50,9 +51,10 @@ export const Loading: StoryObj<typeof Page> = {
     render: () => {
         return (
             <Page
+                loading
                 title="Title"
                 subtitle="Subtitle"
-                loading
+                release="1.0.0"
                 action={
                     <Button
                         size="small"

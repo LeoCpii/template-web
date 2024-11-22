@@ -11,12 +11,21 @@ import './Page.scss';
 
 export interface BaseProps extends PropsWithChildren {
     title: string;
+    release: string;
     loading?: boolean;
     subtitle?: string;
     action?: React.JSX.Element;
     backAction?: React.JSX.Element;
 };
-export default function BasePage({ title, subtitle, action, loading, backAction, children }: BaseProps) {
+export default function BasePage({
+    title,
+    action,
+    release,
+    loading,
+    subtitle,
+    backAction,
+    children
+}: BaseProps) {
     const [{ orientation, align, fullWidth }, setPreferences] = useState<{
         orientation: Orientation; align: CSSProperties['alignItems'], fullWidth: boolean;
     }>({ align: 'center', orientation: 'row', fullWidth: false });
@@ -80,7 +89,7 @@ export default function BasePage({ title, subtitle, action, loading, backAction,
                 justifyContent="center"
                 sx={{ color: ({ text }) => text.secondary }}
             >
-                <span>Versão: {1}</span>
+                <span>Versão: {release}</span>
             </Stack>
         </Stack >
     );

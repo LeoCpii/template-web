@@ -68,6 +68,7 @@ export const template: StoryObj = {
                         <Page
                             title="My page title"
                             subtitle="A pretty cool subtitle"
+                            release="1.0.0"
                             action={
                                 <Button
                                     size="small"
