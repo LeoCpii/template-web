@@ -5,6 +5,8 @@ import { StoryFn } from '@storybook/react';
 import ThemeProvider from '../src/theme/ThemeProvider';
 import createTheme from '../src/theme/createTheme';
 
+import './style.css';
+
 function addLink(url: string) {
     const link = document.createElement('link');
     link.rel = 'stylesheet';

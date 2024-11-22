@@ -5,11 +5,11 @@
   "type": "module",
   "author": "leonardo.goncalves <leogoncalves.contato@gmail.com>",
   "scripts": {
-    "start": "env-cmd -f .env vite --port 5000",
-    "dev": "env-cmd -f .env.dev vite --port 5000",
+    "start": "env-cmd -f .env vite --port 4200",
+    "dev": "env-cmd -f .env.dev vite --port 4200",
     "build": "tsc && vite build",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview --port 5000"
+    "preview": "vite preview --port 4200"
   },
   "dependencies": {
     "@firebase/auth": "^1.8.0",
