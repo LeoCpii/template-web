@@ -61,7 +61,7 @@ jobs:
     needs: [build-sso]
     uses: ./.github/workflows/e2e-tests.yml
     with:
-      PORT: 5000
+      PORT: 4200
       PATH: dist
       BUILD_ENV: local
       PROJECT: sso
